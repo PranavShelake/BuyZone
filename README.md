@@ -64,12 +64,11 @@ BuyZone is crafted to deliver a comprehensive online shopping experience. With i
 
 Experience the future of online shopping with **BuyZone** – where convenience meets innovation.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contributing
-Contributions are welcome! Please read the [CONTRIBUTING](CONTRIBUTING.md) guidelines for more information.
+## Admin login 
+   username: admin
+   password: 123
 
 ## Contact
-For any inquiries or issues, feel free to reach out via [email@example.com](mailto:email@example.com).
+For any inquiries or issues, feel free to reach out via [pranavshelake99@gmail.com].
 
