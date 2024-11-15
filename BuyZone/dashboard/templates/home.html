@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <div class="container">
+        {% if categories %}
+            {% for category in categories %}
+                <div class="category-section">
+                    <h2 class="category-title">{{ category.title }}</h2>
+                    <div class="category-products">
+                        {% if category.products.all %}
+                            {% for product in category.products.all %}
+                                <div class="product-card">
+                                    <div class="content">
+                                        <h3>{{ product.title }}</h3>
+                                        <p>{{ product.description }}</p>
+                                        <span class="price">${{ product.price }}</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No products available in this category.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No categories found.</p>
+        {% endif %}
+    </div>
+{% endblock %}

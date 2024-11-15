@@ -1,0 +1,22 @@
+{% block content %}
+    <div class="container">
+        {% for category in categories %}
+            <h2>{{ category.title }}</h2>
+            <div class="category-products">
+                {% for product in category.product_set.all %}
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Product Image">
+                        <div class="content">
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.description }}</p>
+                            <span class="price">${{ product.price }}</span>
+                            <a href="#" class="btn">Add to Cart</a>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No products available in this category.</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

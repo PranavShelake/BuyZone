@@ -1,0 +1,40 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'account.css' %}">
+</head>
+
+<body>
+    <form method="post" class="container">
+        {% csrf_token %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <p style=" color: #d9dcd6; font-weight: 600; ">{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h2>Login...</h2>
+        <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <i class="fas fa-lock" onclick="togglePassword()"></i>
+        </div>
+        <button class="btn1" type="button">
+            <a href="{% url 'account:verification' %}">Forget Password</a>
+        </button>
+        <button class="btn2" type="submit">Submit</button>
+        <p>Don't have an account? <a href="{% url 'account:register' %}">Register</a></p>
+    </form>
+    <script src="{% static 'account.js' %}"></script>
+</body>
+
+</html>
+
+{% endblock %}
